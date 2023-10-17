@@ -1292,13 +1292,13 @@ static const struct tty_operations ft260_uart_ops = {
 	.proc_show		= ft260_uart_proc_show,
 };
 
-static void uart_dtr_rts(struct tty_port *tport, int onoff)
+static void uart_dtr_rts(struct tty_port *tport, bool active)
 {
 }
 
-static int uart_carrier_raised(struct tty_port *tport)
+static bool uart_carrier_raised(struct tty_port *tport)
 {
-	return -EINVAL;
+	return false;
 }
 
 static void ft260_uart_shutdown(struct tty_port *tport)
